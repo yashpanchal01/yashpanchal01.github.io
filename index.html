@@ -84,6 +84,41 @@
         #element {
             color: gold;
         }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid gold;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        .contactSection {
+            margin: 100px 0;
+            text-align: center;
+        }
+
+        .contactSection h2 {
+            margin-bottom: 20px;
+        }
+
+        .contactSection p {
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 
@@ -93,26 +128,35 @@
             <div class="left">Yash's Portfolio</div>
             <div class="right">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact Me</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="firstSection">
+        <section id="home" class="firstSection">
             <div class="leftSection">
                 Hi, My name is <span class="gold">Yash</span>
                 <div>&amp I am a passionate</div>
                 <span id="element"></span>
+                <div class="buttons">
+                    <a href="documents/15-05-2021-052358It-Ends-with-Us.pdf" class="button" download>Download Resume</a>
+                    <a href="https://github.com/yashpanchal01" class="button" target="_blank">Visit GitHub</a>
+                </div>
             </div>
             <div class="rightSection">
                 <img src="images/bg.png" alt="developer's image">
             </div>
+        </section>
+        
+        <section id="contact" class="contactSection">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:yashpanchal251198@gmail.com">yashpanchal251198@gmail.com</a></p>
         </section>
     </main>
 
@@ -121,6 +165,15 @@
         var typed = new Typed('#element', {
             strings: ['Web Developer', 'Video Editor', 'Software Developer'],
             typeSpeed: 50,
+        });
+
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
