@@ -58,34 +58,28 @@
             justify-content: space-around;
             align-items: center;
             margin: 120px 0;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-
-        .firstSection>div {
-            width: 40%;
         }
 
         .leftSection {
             font-size: 3rem;
             margin: 30px 0;
+            width: 40%;
+        }
+
+        .rightSection {
+            width: 40%;
+            text-align: center;
         }
 
         .rightSection img {
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .gold {
-            color: gold;
-        }
-
-        #element {
-            color: gold;
+            width: 80%;
         }
 
         .buttons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .button {
@@ -123,9 +117,11 @@
             .firstSection {
                 flex-direction: column;
                 text-align: center;
+                margin: 60px 0;
+                padding: 0 20px;
             }
 
-            .firstSection>div {
+            .leftSection, .rightSection {
                 width: 100%;
             }
 
@@ -133,8 +129,12 @@
                 font-size: 2rem;
             }
 
+            .rightSection img {
+                width: 100%;
+                max-width: 400px;
+            }
+
             .buttons {
-                display: flex;
                 flex-direction: column;
                 align-items: center;
             }
@@ -147,6 +147,7 @@
 
             nav ul {
                 flex-direction: column;
+                align-items: center;
             }
 
             nav ul li {
@@ -182,16 +183,16 @@
                 Hi, My name is <span class="gold">Yash</span>
                 <div>&amp I am a passionate</div>
                 <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="images/bg.png" alt="developer's image">
                 <div class="buttons">
                     <a href="path/to/your/resume.pdf" class="button" download>Download Resume</a>
                     <a href="https://github.com/yourusername" class="button" target="_blank">Visit GitHub</a>
                 </div>
             </div>
-            <div class="rightSection">
-                <img src="images/bg.png" alt="developer's image">
-            </div>
         </section>
-        
+
         <section id="contact" class="contactSection">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:yash@example.com">yash@example.com</a></p>
