@@ -58,6 +58,8 @@
             justify-content: space-around;
             align-items: center;
             margin: 120px 0;
+            flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         .firstSection>div {
@@ -70,11 +72,8 @@
         }
 
         .rightSection img {
-            width: 80%;
-        }
-
-        .rightSection div {
-            width: 30%;
+            width: 100%;
+            max-width: 400px;
         }
 
         .gold {
@@ -108,7 +107,7 @@
         }
 
         .contactSection {
-            margin: 100px 0;
+            margin: 200px 0 100px;
             text-align: center;
         }
 
@@ -118,6 +117,45 @@
 
         .contactSection p {
             font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .firstSection>div {
+                width: 100%;
+            }
+
+            .leftSection {
+                font-size: 2rem;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 80%;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -145,8 +183,8 @@
                 <div>&amp I am a passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <a href="documents/15-05-2021-052358It-Ends-with-Us.pdf" class="button" download>Download Resume</a>
-                    <a href="https://github.com/yashpanchal01" class="button" target="_blank">Visit GitHub</a>
+                    <a href="path/to/your/resume.pdf" class="button" download>Download Resume</a>
+                    <a href="https://github.com/yourusername" class="button" target="_blank">Visit GitHub</a>
                 </div>
             </div>
             <div class="rightSection">
@@ -156,7 +194,7 @@
         
         <section id="contact" class="contactSection">
             <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:yashpanchal251198@gmail.com">yashpanchal251198@gmail.com</a></p>
+            <p>Email: <a href="mailto:yash@example.com">yash@example.com</a></p>
         </section>
     </main>
 
