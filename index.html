@@ -19,9 +19,6 @@
             background-color: rgb(0, 0, 128);
             color: white;
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         nav {
@@ -61,7 +58,6 @@
             justify-content: space-around;
             align-items: center;
             margin: 120px 0;
-            flex: 1;
         }
 
         .firstSection>div {
@@ -88,32 +84,13 @@
         #element {
             color: gold;
         }
-
-        footer {
-            background-color: rgb(0, 0, 0);
-            color: rgb(120, 120, 120);
-            text-align: center;
-            padding: 8px 0;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: rgb(255, 255, 255);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
     </style>
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="left">YASH's Portfolio</div>
+            <div class="left">Yash's Portfolio</div>
             <div class="right">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -129,7 +106,7 @@
     <main>
         <section class="firstSection">
             <div class="leftSection">
-                Hi, My name is <span class="gold">YASH</span>
+                Hi, My name is <span class="gold">Yash</span>
                 <div>&amp I am a passionate</div>
                 <span id="element"></span>
             </div>
@@ -138,10 +115,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        copyright &copy; yashpanchal01.github.io | All rights reserved.
-    </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
