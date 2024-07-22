@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YASH's - Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(73, 73, 73);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.025rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .servicesSection {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .servicesSection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: gold;
+        }
+
+        .serviceCards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .serviceCard {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            width: calc(33% - 60px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .serviceCard:hover {
+            transform: translateY(-10px);
+        }
+
+        .serviceCard h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .serviceCard p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .serviceCard {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .serviceCard {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Yash's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="servicesSection">
+            <h2>Our Services</h2>
+            <div class="serviceCards">
+                <div class="serviceCard">
+                    <h3>Web Development</h3>
+                    <p>We offer professional web development services to help you build a strong online presence. From custom websites to e-commerce solutions, we do it all.</p>
+                </div>
+                <div class="serviceCard">
+                    <h3>Video Editing</h3>
+                    <p>Our video editing services include color grading, multi-cam footage editing, and creating compelling video content for your needs.</p>
+                </div>
+                <div class="serviceCard">
+                    <h3>Software Development</h3>
+                    <p>We specialize in developing high-quality software solutions tailored to your business needs. From mobile apps to desktop applications, we cover a wide range of platforms.</p>
+                </div>
+                <div class="serviceCard">
+                    <h3>Graphic Design</h3>
+                    <p>Our graphic design services include logo design, branding, and creating visually appealing content for your business.</p>
+                </div>
+                <div class="serviceCard">
+                    <h3>SEO Optimization</h3>
+                    <p>We provide SEO optimization services to improve your website's visibility on search engines and attract more organic traffic.</p>
+                </div>
+                <div class="serviceCard">
+                    <h3>Content Creation</h3>
+                    <p>We offer content creation services including blog writing, copywriting, and creating engaging content for your audience.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
