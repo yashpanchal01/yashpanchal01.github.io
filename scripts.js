@@ -1,8 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var typed = new Typed('#element', {
-        strings: ['Web Developer', 'Video Editor', 'Software Developer'],
-        typeSpeed: 50,
-        backSpeed: 25,
-        loop: true
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 500);
+        });
     });
 });
