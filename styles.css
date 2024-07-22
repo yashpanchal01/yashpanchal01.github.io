@@ -26,11 +26,16 @@ nav ul {
 nav ul li {
     list-style: none;
     margin: 0 23px;
+    transition: opacity 0.5s ease-in-out;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
+}
+
+.fade-out {
+    opacity: 0;
 }
 
 nav ul li a:hover {

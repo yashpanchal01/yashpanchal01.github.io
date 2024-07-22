@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Yash's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(62,62,62);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.025rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .projectSection {
+            margin: 50px 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .projectSection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .projectContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: rgb(50, 50, 50);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid gold;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .project a:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Yash's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="projectSection">
+            <h2>My Projects</h2>
+            <div class="projectContainer">
+                <div class="project">
+                    <h3>Project One</h3>
+                    <p>A brief description of Project One, highlighting key features and technologies used.</p>
+                    <a href="https://github.com/yashpanchal01/project-one" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>Project Two</h3>
+                    <p>A brief description of Project Two, highlighting key features and technologies used.</p>
+                    <a href="https://github.com/yashpanchal01/project-two" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>Project Three</h3>
+                    <p>A brief description of Project Three, highlighting key features and technologies used.</p>
+                    <a href="https://github.com/yashpanchal01/project-three" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
