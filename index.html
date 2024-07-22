@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YASH's - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0,0,128);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 0);
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.025rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 120px 0;
+        }
+
+        .firstSection>div {
+            width: 40%;
+        }
+        
+        .leftSection {
+            font-size: 3rem;
+            margin: 30px 0;
+        }
+
+        .rightSection img {
+            width: 80%;
+        }
+
+        .rightSection div {
+            width: 30%;
+        }
+
+        .gold {
+            color: gold;
+        }
+
+        #element {
+            color: gold;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid gold;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        .aboutSection {
+            margin: 40% 0;
+            text-align: center;
+        }
+
+        .aboutSection p {
+            color: whitesmoke;
+            font-size: 1.7rem;
+            margin: 0 10%;
+        }
+
+        .contactSection {
+            color: white;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .aboutSection h2 {
+            margin-bottom: 16px;
+        }
+
+        .contactSection h2 {
+            margin-bottom: 16px;
+        }
+
+        .contactSection p {
+            font-size: 1.2rem;
+        }
+
+/* New CSS to change the email color */
+.contactSection a {
+    color: rgb(0, 255, 72);
+    text-decoration: none;
+}
+
+.contactSection hover {
+    color: rgb(255, 0, 0);
+}
+
+        @media (max-width: 768px) {
+            .firstSection {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .firstSection>div {
+                width: 80%;
+            }
+
+            .leftSection {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .rightSection img {
+                width: 100%;
+            }
+
+            .buttons {
+                text-align: center;
+            }
+
+            .aboutSection,
+            .contactSection {
+                margin: 20% 0;
+            }
+
+            .aboutSection p {
+                margin: 0 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Yash's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="gold">Yash</span>
+                <div>&amp I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <a href="documents/Yash_Panchal_Resume.pdf" class="button" download>Download Resume</a>
+                    <a href="https://github.com/yashpanchal01" class="button" target="_blank">Visit GitHub</a>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="images/bg.png" alt="developer's image">
+            </div>
+        </section>
+
+        <section id="about" class="aboutSection">
+            <h2>About Me</h2>
+            <p>Hello, I am Yash, a passionate web developer, video editor, and software developer. I love to create dynamic and interactive web applications and have a keen interest in learning new technologies.</p>
+        </section>
+
+        <section id="contact" class="contactSection">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="yashpanchal251198@gmail.com" style="color: rgb(51,102,204);">yashpanchal251198@gmail.com</a></p>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Video Editor', 'Software Developer'],
+            typeSpeed: 50,
+        });
+
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
 
