@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -20,15 +21,21 @@
             background-color: #3E3E3E;
             color: white;
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             height: 80px;
             background-color: #000;
             padding: 0 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -64,7 +71,8 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            padding: 50px 20px;
+            padding: 100px 20px 50px 20px;
+            margin-top: 80px;
         }
 
         .contact-container h2 {
@@ -156,10 +164,21 @@
                 padding: 20px;
             }
         }
+
+        /* Page transition effects */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 
-<body>
+<body class="fade-in">
     <header>
         <nav>
             <div class="left">Yash's Portfolio</div>
@@ -180,7 +199,7 @@
             <h2>Contact Me</h2>
             <p>If you have any questions, feel free to reach out to me. You can also connect with me on my social media channels.</p>
             <div class="contact-form">
-    <form action="contact-form-handler.php" method="POST">
+                <form id="contactForm">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -190,13 +209,47 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
 
-                    <input type="submit" value="Send Message">
+                    <input type="submit" value="Submit">
                 </form>
             </div>
             <p>Email: <a href="mailto:yashpanchal251198@gmail.com">yashpanchal251198@gmail.com</a></p>
         </div>
     </main>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Page transition effects
+        window.addEventListener('beforeunload', function () {
+            document.body.classList.add('fade-out');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('fade-in');
+        });
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            document.body.classList.add('fade-out'); // Add fade-out class to body
+
+            // Simulate form submission process
+            setTimeout(() => {
+                window.location.href = 'thank-you.html'; // Redirect to thank you page
+            }, 500); // Match the transition duration
+        });
+    </script>
 </body>
 
 </html>
-

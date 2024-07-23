@@ -9,16 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: rgb(62, 62, 62);
-            color: white;
+            background-color: #0D1B2A;
+            color: #E0E1DD;
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
         }
 
         nav {
@@ -26,8 +30,14 @@
             justify-content: space-around;
             align-items: center;
             height: 80px;
-            background-color: rgb(0, 0, 0);
+            background-color: #1B263B;
             padding: 0 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: transform 0.5s ease-in-out;
         }
 
         nav ul {
@@ -42,31 +52,35 @@
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #E0E1DD;
             font-weight: 600;
+            transition: color 0.3s, font-size 0.3s;
         }
 
         nav ul li a:hover {
-            color: rgb(153, 153, 226);
+            color: #E63946;
             font-size: 1.025rem;
         }
 
         .left {
             font-size: 1.5rem;
             font-weight: 700;
+            color: #E63946;
         }
 
         .firstSection {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            margin: 120px 0;
+            min-height: 100vh;
+            padding-top: 80px;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .firstSection>div {
             width: 40%;
         }
-        
+
         .leftSection {
             font-size: 3rem;
             margin: 30px 0;
@@ -76,16 +90,12 @@
             width: 80%;
         }
 
-        .rightSection div {
-            width: 30%;
-        }
-
-        .gold {
-            color: gold;
+        .highlight {
+            color: #E63946;
         }
 
         #element {
-            color: gold;
+            color: #E63946;
         }
 
         .buttons {
@@ -96,9 +106,9 @@
             display: inline-block;
             padding: 10px 20px;
             margin: 10px;
-            color: white;
-            background-color: rgb(0, 0, 0);
-            border: 1px solid gold;
+            color: #E0E1DD;
+            background-color: #1B263B;
+            border: 1px solid #E63946;
             border-radius: 5px;
             text-decoration: none;
             font-size: 1rem;
@@ -106,8 +116,8 @@
         }
 
         .button:hover {
-            background-color: gold;
-            color: black;
+            background-color: #E63946;
+            color: #1B263B;
         }
 
         .aboutSection {
@@ -116,13 +126,13 @@
         }
 
         .aboutSection p {
-            color: whitesmoke;
+            color: #E0E1DD;
             font-size: 1.7rem;
             margin: 0 10%;
         }
 
         .contactSection {
-            color: white;
+            color: #E0E1DD;
             margin: 30px 0;
             text-align: center;
         }
@@ -139,15 +149,14 @@
             font-size: 1.2rem;
         }
 
-/* New CSS to change the email color */
-.contactSection a {
-    color: rgb(0, 255, 72);
-    text-decoration: none;
-}
+        .contactSection a {
+            color: #F1FAEE;
+            text-decoration: none;
+        }
 
-.contactSection hover {
-    color: rgb(255, 0, 0);
-}
+        .contactSection a:hover {
+            color: #A8DADC;
+        }
 
         @media (max-width: 768px) {
             .firstSection {
@@ -181,10 +190,21 @@
                 margin: 0 5%;
             }
         }
+
+        /* Page transition effects */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
     </style>
 </head>
 
-<body>
+<body class="fade-in">
     <header>
         <nav>
             <div class="left">Yash's Portfolio</div>
@@ -203,7 +223,7 @@
     <main>
         <section id="home" class="firstSection">
             <div class="leftSection">
-                Hi, My name is <span class="gold">Yash</span>
+                Hi, My name is <span class="highlight">Yash</span>
                 <div>&amp I am a passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
@@ -215,19 +235,18 @@
                 <img src="images/bg.png" alt="developer's image">
             </div>
         </section>
-
-    
-
-        
     </main>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
+        // Typed.js initialization
         var typed = new Typed('#element', {
             strings: ['Web Developer', 'Video Editor', 'Software Developer'],
             typeSpeed: 50,
+            loop: true
         });
 
+        // Smooth scrolling for internal links
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href').startsWith('#')) {
@@ -238,8 +257,30 @@
                 }
             });
         });
+
+        // Page transition effects
+        window.addEventListener('beforeunload', function () {
+            document.body.classList.add('fade-out');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('fade-in');
+        });
+
+        // Ensure that fade-out effect works on navigation
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('http') || this.getAttribute('href').endsWith('.html')) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
     </script>
 </body>
 
 </html>
-
