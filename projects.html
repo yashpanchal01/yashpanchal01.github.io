@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Yash's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,9 +58,8 @@
         }
 
         .projectSection {
-            margin: 50px 0;
+            text-align: center; /* Center the content */
             padding: 20px;
-            text-align: center;
         }
 
         .projectSection h2 {
@@ -107,12 +107,14 @@
             border-radius: 5px;
             text-decoration: none;
             font-size: 1rem;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
 
         .project a:hover {
             background-color: gold;
             color: black;
+            box-shadow: 0 0 10px 2px gold, 0 0 10px 2px gold inset;
+            transform: translateY(-5px);
         }
 
         @media (max-width: 768px) {
@@ -138,7 +140,6 @@
             </div>
         </nav>
     </header>
-    
 
     <main>
         <section class="projectSection">
@@ -162,6 +163,42 @@
             </div>
         </section>
     </main>
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Page transition effects
+        window.addEventListener('beforeunload', function () {
+            document.body.classList.add('fade-out');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('fade-in');
+        });
+
+        // Ensure that fade-out effect works on navigation
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('http') || this.getAttribute('href').endsWith('.html')) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

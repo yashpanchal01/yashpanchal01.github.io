@@ -128,6 +128,16 @@
 
  
         }
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 2px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }   
     </style>
 </head>
 
@@ -169,6 +179,46 @@
         </div>
 
     </main>
+    
+   
+ <script>
+        
+        // Smooth scrolling for internal links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    
+        // Page transition effects
+        window.addEventListener('beforeunload', function () {
+            document.body.classList.add('fade-out');
+        });
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('fade-in');
+        });
+    
+        // Ensure that fade-out effect works on navigation
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('http') || this.getAttribute('href').endsWith('.html')) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+ </script>
+    
 </body>
 
 </html>

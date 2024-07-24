@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #3E3E3E;
+            background-color: rgb(62, 62, 62);
             color: white;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
@@ -133,11 +133,15 @@
             color: black;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
+        
 
         .contact-form input[type="submit"]:hover {
             background-color: #e5c100;
+            
+            box-shadow: 0 0 10px 2px gold, 0 0 10px 2px gold inset;
+            transform: scale(1.05);
         }
 
         .contact-container a {
@@ -237,6 +241,21 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.body.classList.add('fade-in');
         });
+
+        // Ensure that fade-out effect works on navigation
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('http') || this.getAttribute('href').endsWith('.html')) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500); // Match the transition duration
+                }
+            });
+        });
+    
 
         // Handle form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
