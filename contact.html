@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Add your styles here */
         /* Reset */
         * {
             margin: 0;
@@ -203,7 +204,7 @@
             <h2>Contact Me</h2>
             <p>If you have any questions, feel free to reach out to me. You can also connect with me on my social media channels.</p>
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" action="/submit-form" method="POST">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -255,7 +256,6 @@
                 }
             });
         });
-    
 
         // Handle form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
